@@ -15,13 +15,13 @@ app.post('/user', (req, res) => {
     user.push(req.body)
     res.send(user)
   })
-//   app.put('/user', (req, res) => {
-//     user.push({
-//         firstName: "orshikh",
-//         lastName: "hhh"
-//     })
-//     res.send(user)
-//   })
+  app.put('/user', (req, res) => {
+    user.push({
+        firstName: "orshikh",
+        lastName: "hhh"
+    })
+    res.send(user)
+  })
   app.delete('/user', (req, res) => {
     
     user.splice(0,1)
