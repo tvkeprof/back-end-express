@@ -1,16 +1,15 @@
 import { Router } from "express";
-import { loginUser } from "../controllers/users/login.controller";
-import { validateLoginInput } from "../middlewares/authMiddleware";
-import { signUpMiddleWare } from "../middlewares/signUpMiddleware";
-import { createUser } from "../controllers/users/create-user.controller";
+import { loginUser } from "../controllers/users/login.controller.js";
+import { validateLoginInput } from "../middlewares/authMiddleware.js";
+import { signUpMiddleWare } from "../middlewares/signUpMiddleware.js";
+import { createUser } from "../controllers/users/create-user.controller.js";
 
 export const authenticationRouter = Router();
 
-authenticationRouter.post("/login", validateLoginInput, loginUser)
-authenticationRouter.post("/sign_up", signUpMiddleWare, createUser)
+authenticationRouter.post("/", validateLoginInput, loginUser);
+authenticationRouter.post("/", signUpMiddleWare, createUser);
 
-
-// index.js ==> app.use ==> router ==> middle? ===> controller 
+// index.js ==> app.use ==> router ==> middle? ===> controller
 
 // Middle 2
 // 1. sign up ==> create user existed?
